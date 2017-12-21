@@ -17,4 +17,4 @@ Function Register-Monitor {
     Register-ObjectEvent $monitor "changed" -Action $changeAction
 }
 
- Register-Monitor "c:\Users\louisMachin\Desktop\Powershell\temp"
+ Register-Monitor "c:\Users\louisMachin\Desktop\Powershell\ps-registry-monitor\temp"
