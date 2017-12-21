@@ -12,9 +12,11 @@ Function Register-Monitor {
         $changeType = $Event.SourceEventArgs.ChangeType
         $timeStamp = $Event.TimeGenerated
         Write-Host "$changeType $name at $timeStamp"
+        # To send a keystroke, utilise these lines
+        # $wsh = New-Object -ComObject WScript.Shell
+        # $wsh.SendKeys("{NUMLOCK}")
     ')
-
     Register-ObjectEvent $monitor "changed" -Action $changeAction
 }
 
- Register-Monitor "c:\Users\louisMachin\Desktop\Powershell\temp"
+ Register-Monitor "c:\Users\louisMachin\Desktop\Powershell\ps-registry-monitor\temp"
