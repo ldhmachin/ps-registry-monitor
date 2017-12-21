@@ -11,7 +11,12 @@ Function Register-Monitor {
         $name = $Event.SourceEventArgs.Name
         $changeType = $Event.SourceEventArgs.ChangeType
         $timeStamp = $Event.TimeGenerated
-        Write-Host "$changeType $name at $timeStamp"
+        $text = Get-Content -Path $path -totalcount 1
+
+        Write-Host $text -foregroundcolor "magenta"
+        Write-Host "$changeType $name at $timeStamp" 
+        # Write-Host $text -foregroundcolor "magenta"
+
         # To send a keystroke, utilise these lines
         # $wsh = New-Object -ComObject WScript.Shell
         # $wsh.SendKeys("{NUMLOCK}")
