@@ -13,8 +13,9 @@ Function Register-Monitor {
         $timeStamp = $Event.TimeGenerated
         $text = Get-Content -Path $path -totalcount 1
 
-        Write-Host $text -foregroundcolor "magenta"
-        Write-Host "$changeType $name at $timeStamp" 
+        # Write-Host $text -foregroundcolor "magenta"
+        # Write-Host "$changeType $path at $timeStamp" 
+        Move-Item -path $path -destination "C:\Users\Louis\Documents\Sandbox\B"
         # Write-Host $text -foregroundcolor "magenta"
 
         # To send a keystroke, utilise these lines
@@ -24,4 +25,4 @@ Function Register-Monitor {
     Register-ObjectEvent $monitor "changed" -Action $changeAction
 }
 
- Register-Monitor "c:\Users\louisMachin\Desktop\Powershell\ps-registry-monitor\temp"
+ Register-Monitor "C:\Users\Louis\Documents\Sandbox\A"
